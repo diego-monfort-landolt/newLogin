@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,4 +133,139 @@
 
    
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica</title>
+    <style>
+    .form {
+    
+        margin: 50px;
+        padding: 25px;
+        border: 2px solid #000;
+        border-radius: 12px 12px 12px 12px;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(128, 0, 128, 0.299) ;
+        box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.8);
+
+    }
+    form input {
+        border-radius: 4px 4px 4px 4px;
+        padding: 4px;
+        
+    }
+    form input:hover {
+        color: blue;
+        background-color: rgba(59, 1, 59, 0.322);
+       
+    }
+
+    /*Animation beginn*/
+    .zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  } 
+         
+         
+        
+       
+    
+  
+
+    </style>
+
+    
+</head>
+<body>
+    
+
+<form class="form zoomIn" name="acceso" onsubmit="return validarform(document.acceso.email,document.acceso.password)">
+    <h2>Login</h2>
+    <p>Full Name: </p> <input type="text" name="identificador">
+    <p>E-mail: </p> <input type="email" name="email">
+    <p>Password: </p> <input type="password" name="password">
+    <input type="submit"  name="botenviar" value="Send">
+</form>
+ 
+  
+<script>
+    // mit dem abschnitt wird das PW kontroliert -6-15 der erste wert muss bis 6 haben der 2 unter 15- danach meldung false oder true (kennwort validierung)
+    
+     function validarcontrasenya(elemento){
+        if ((elemento.value.length < 6) || (elemento.value.length > 15)){
+
+            alert("The password must have 6 to 15 caracters!");
+            return false;
+    
+        }
+        else
+        return true;
+     }
+     // email validierung
+     function validaremail(elemento) {
+        if(elemento.value.indexOf(" ")==-1 &&
+        elemento.value.indexOf("@")!=-1 &&
+        elemento.value.indexOf(".")!=-1){
+            return true;
+    
+        } else {
+            alert("Falsche E-mail eingefuegt");
+            return false;
+        }
+     }
+    //nun kommt die funktion die beide aufruft
+    function validarform(elemento1, elemento2) {
+        var email;
+        var password;
+        mail = validaremail(elemento1);
+        password = validarcontrasenya(elemento2);
+    
+        if ((mail == true) && (password == true)){
+            alert("Welcome, " + document.acceso.identificador.value);
+            return true;
+    
+        }
+        else 
+        return false;
+    }
+    
+    
+    
+      
+    
+        </script>
+
+   
+</body>
+>>>>>>> 21df7a92c223cbcea8df13246f0d7b771c4ef407
 </html>
